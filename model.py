@@ -1,14 +1,14 @@
 import pandas as pd 
 import pickle as pkl
 
-A=pd.read_csv("C:/Users/SAMSUNG/deploy/50_Startups - 50_Startups.csv")
+A=pd.read_excel("Attrition Case Study.xlsx")
 
 
-X = A[['RND','MKT']]
+X = A[['RND','MKT']]  #change X and Y
 Y = A[['PROFIT']]
 
-from sklearn.linear_model import LinearRegression
-lm = LinearRegression()
+from sklearn.linear_model import LogisticRegression
+lr = LogisticRegression()
 model = lm.fit(X,Y)
 
 pkl.dump(model,open("model.pkl","wb"))
